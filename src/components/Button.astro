@@ -1,5 +1,118 @@
 ---
+const { buttontext, filter } = Astro.props;
+const { class: className } = Astro.props;
 ---
-<div>
-    <button class="border-2 border-black"><slot /></button>
+
+<div class="button_div">
+  <button class={className} type="button" data-filter={filter}>
+    {buttontext}
+  </button>
 </div>
+
+<style>
+  .button_div {
+    display: flex;
+    justify-content: center;
+  }
+
+  .button {
+    min-width: 160px;
+    height: 50px;
+    font-size: 18px;
+    font-family: var(--font1);
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 2px solid var(--tertiary);
+    background-color: var(--tertiary);
+    color: var(--primary);
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    transition:
+      background 0.3s ease,
+      color 0.3s ease,
+      transform 0.2s ease;
+    white-space: nowrap;
+    animation:
+      jello-horizontal 0.9s ease-in-out 1 2s forwards,
+      jello-horizontal-pause 2s ease-in-out 7s infinite;
+  }
+  /* Animationen til knappen */
+  @keyframes jello-horizontal {
+    0% {
+      transform: scale3d(1, 1, 1);
+    }
+    30% {
+      transform: scale3d(1.25, 0.75, 1);
+    }
+    40% {
+      transform: scale3d(0.75, 1.25, 1);
+    }
+    50% {
+      transform: scale3d(1.15, 0.85, 1);
+    }
+    65% {
+      transform: scale3d(0.95, 1.05, 1);
+    }
+    75% {
+      transform: scale3d(1.05, 0.95, 1);
+    }
+    100% {
+      transform: scale3d(1, 1, 1);
+    }
+  }
+
+  /* Pause mellem gentagelser */
+  @keyframes jello-horizontal-pause {
+    0% {
+      transform: scale3d(1, 1, 1);
+    }
+    30% {
+      transform: scale3d(1.25, 0.75, 1);
+    }
+    40% {
+      transform: scale3d(0.75, 1.25, 1);
+    }
+    50% {
+      transform: scale3d(1.15, 0.85, 1);
+    }
+    65% {
+      transform: scale3d(0.95, 1.05, 1);
+    }
+    75% {
+      transform: scale3d(1.05, 0.95, 1);
+    }
+    80% {
+      transform: scale3d(1, 1, 1); /* Hold den sidste form i et stykke tid */
+    }
+    100% {
+      transform: scale3d(1, 1, 1); /* Slut uden ændring */
+    }
+  }
+
+  .button:hover {
+    background-color: var(--primary);
+    color: var(--tertiary);
+    transform: scale(1.05);
+  }
+
+  .button:active {
+    transform: scale(0.98);
+  }
+
+  .active {
+    background-color: var(--secondary);
+    color: var(--primary);
+  }
+
+  @media (min-width: 800px) {
+    .button {
+      font-size: 20px;
+    }
+    .button_div {
+      display: flex;
+      justify-content: flex-start;
+      padding-left: 2rem;
+    }
+  }
+</style>

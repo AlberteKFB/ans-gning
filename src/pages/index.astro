@@ -1,15 +1,364 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Button from '../components/Button.astro';
-import Link from '../components/Link.astro';
-import { Image } from 'astro:assets';
+import Button from "../components/Button.astro";
+import "../styles/global.css";
+import { Image } from "astro:assets";
 import thumbsup from "../assets/images/thumbsup.png";
+import "animate.css";
 ---
+
 <MainLayout title="Titel">
-	<article>
-		<h1>Index overskrift</h1>
-		<Button>Klik!</Button>
-		<p>Link til <Link href="https://www.kea.dk" target="_blank">En anden side</Link></p>
-		<Image src={thumbsup} alt=""></Image>
-	</article>
+  <!-- <section class="hero">
+    <div>
+      <h1>
+        Hej, jeg er Alberte Bøtkjær - UI designer med passion for
+        <span class="bold-text">visuel kommunikation, brugerrejsen</span> og
+        <span class="bold-text">konceptudvikling</span>
+      </h1>
+      <a
+        href="https://www.linkedin.com/in/alberte-b%C3%B8tkj%C3%A6r-53383b247/"
+        target="_blank"
+        ><Button class="button" buttontext="Se mit CV på Linkedin" /></a
+      >
+    </div>
+  </section> -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>
+        Hej, jeg er Alberte Bøtkjær - UI designer med passion for
+        <span class="bold-text">visuel kommunikation, brugerrejsen</span> og
+        <span class="bold-text">konceptudvikling</span>
+      </h1>
+      <a
+        href="https://www.linkedin.com/in/alberte-b%C3%B8tkj%C3%A6r-53383b247/"
+        target="_blank"
+        ><Button class="button" buttontext="Se mit CV på Linkedin" /></a
+      >
+    </div>
+    <div class="hero-image">
+      <img src="potrætkold1.webp" alt="" />
+      <img src="blob3.svg" alt="farvet blob" />
+    </div>
+  </section>
+
+  <section id="om">
+    <div>
+      <h2>Lidt om mig</h2>
+      <p>
+        Jeg er en <span
+          class="bold-text2"
+          data-words="ambitiøs, kreativ, nysgerrig, detaljeorienteret, struktureret, innovativ"
+          >ambitiøs</span
+        >
+
+        multimediedesigner med en passion for at udvikle digitale løsninger i
+        Figma.
+      </p>
+
+      <p>
+        Jeg trives både selvstændigt og i teams, hvor jeg bidrager med idéer og
+        samarbejder for at opnå de bedste resultater.
+      </p>
+      <p>
+        Gennem mit studie har jeg opbygget solid erfaring med grafisk design,
+        wireframing design patterns og meget mere. Jeg ønsker at bruge min
+        praktik til at videreudvikle mine kreative evner og tekniske
+        færdigheder, samtidig med at jeg skaber brugervenlige og visuelle stærke
+        løsninger.
+      </p>
+    </div>
+    <!-- <div>
+      <img src="potrætkold1.webp" alt="" />
+    </div> -->
+  </section>
+  <section id="skills">
+    <div class="skills-text">
+      <h2>Hvad kan jeg?</h2>
+    </div>
+    <div class="skills-container">
+      <div class="skills-item">
+        <h3>Figma</h3>
+        <img src="figma.svg" alt="figma ikon" />
+        <ul>
+          <li>Prototyping</li>
+          <li>Designsystemer</li>
+          <li>Wireframing</li>
+          <li>Sitemaps</li>
+          <li>Moodboards</li>
+        </ul>
+      </div>
+      <div class="skills-item">
+        <h3>Illustrator</h3>
+        <img src="ai.svg" alt="illustrator ikon" />
+        <ul>
+          <li>Vektorgrafik</li>
+          <li>Farveteori & Paletdesign</li>
+          <li>Logo design</li>
+          <li>Lag- og gruppestyring</li>
+          <li>Ikondesign</li>
+        </ul>
+      </div>
+      <div class="skills-item">
+        <h3>Photoshop</h3>
+        <img src="ps.svg" alt="photoshop ikon" />
+        <ul>
+          <li>Billedredigering & Retouchering</li>
+          <li>Farvekorrektion & Grading</li>
+          <li>Blending Modes & Opacity</li>
+          <li>Social Media Graphics</li>
+        </ul>
+      </div>
+      <div class="skills-item">
+        <h3>VS Code</h3>
+        <img src="vs.svg" alt="vscode ikon" />
+        <ul>
+          <li>HTML</li>
+          <li>CSS & Tailwind CSS</li>
+          <li>JavaScript</li>
+          <li>Astro</li>
+          <li>JSON</li>
+          <li>Github</li>
+        </ul>
+      </div>
+      <div class="skills-item">
+        <h3>Procreate</h3>
+        <img src="procreate.svg" alt="procreate ikon" />
+        <ul>
+          <li>Digital tegning & illustration</li>
+          <li>Layer Management</li>
+          <li>Poster & Social Media Graphics</li>
+          <li>Character Design</li>
+          <li>Frame-by-Frame Animation</li>
+        </ul>
+      </div>
+      <div class="skills-item">
+        <h3>After efects</h3>
+        <img src="ae.svg" alt="after effects ikon" />
+        <ul>
+          <li>Tidslinje-animation</li>
+          <li>Keyframing</li>
+          <li>Motion graphics</li>
+          <li>Easing</li>
+          <li>Tekstanimering</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <div class="splash-container">
+    <img src="splash.svg" alt="splash" />
+  </div>
+  <section id="projekter">
+    <div>
+      <h2>Tag et kig på nogle af mine projekter</h2>
+    </div>
+    <div class="projekter-container">
+      <div class="projekt">
+        <h3>
+          <a
+            href="https://www.figma.com/design/FMSgCB6vtrnr5PDn93ZjIc/2-sem---Eksamensprojekt?node-id=1227-4450&t=g4L38WYcrFrMy0gZ-1"
+            target="_blank">2. semester eksamen- Figma</a
+          >
+        </h3>
+        <p>
+          I dette projekt har min rolle bl.a. været at udarbejde wireframes,
+          styletile, lo-fi prototype strukturere designsystemmet samt at
+          sammenstykke den interaktive hi-fi prototype.
+        </p>
+      </div>
+      <div class="projekt">
+        <h3>
+          <a href="https://haircreationsbygaia.netlify.app/" target="_blank"
+            >2. semester eksamen: webløsning</a
+          >
+        </h3>
+        <p>
+          Dette projekt er den endelige løsning fra vores 2. semester eksamen
+          her har jeg arbejdet med supabase og fået forståelse for hvordan man
+          arbejder med API'er. ligedeledes har jeg i dette projekt haft
+          muligheden for at arbejde med en reel virksomhed og har derved lært
+          hvordan man i samarbejde med kunden udvikler en løsning der både lever
+          op til kundens forventing samt UI/UX konventioner.
+        </p>
+      </div>
+      <div class="projekt">
+        <h3><a href="link-til-projekt-3" target="_blank">Projekt 3</a></h3>
+        <p>
+          Her kan du beskrive, hvordan du har bidraget til projektet og hvad der
+          gjorde det spændende.
+        </p>
+      </div>
+      <div class="projekt">
+        <h3><a href="link-til-projekt-4" target="_blank">Projekt 4</a></h3>
+        <p>
+          Beskriv det sidste projekt her. Del hvad der gjorde det unikt og
+          hvilke resultater du opnåede.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="splash-container">
+    <img src="splash2.svg" alt="splash" />
+  </div>
+
+  <!-- <section id="erfaring">
+    <h2>Erfaringer</h2>
+    <div class="timeline-container">
+      <div class="timeline-item" data-year="2017-2020">
+        <h3>Vordingborg Gymnasie</h3>
+        <div class="popup">
+          Uddannelse på Vordingborg Gymnasie med Samfundsfag og Engelsk A.
+        </div>
+        <p>(STX) Samf-Eng A</p>
+        <p>2017-2020</p>
+      </div>
+      <div class="timeline-item" data-year="Marts 2021 - August 2022">
+        <h3>Træner hos McDonald's</h3>
+        <p>Marts 2021 - August 2022</p>
+        <div class="popup">
+          Træner på McDonald's med ansvar for teams og arbejdsplaner.
+        </div>
+      </div>
+      <div class="timeline-item" data-year="September 2022 - April 2023">
+        <h3>ONLY</h3>
+        <p>September 2022 - April 2023</p>
+        <div class="popup">Arbejder som salgsassistent hos ONLY.</div>
+      </div>
+      <div class="timeline-item" data-year="Juli 2023 - Oktober 2024">
+        <h3>Bones</h3>
+        <p>Juli 2023 - Oktober 2024</p>
+        <div class="popup">Arbejder som tjener hos Bones.</div>
+      </div>
+      <div class="timeline-item" data-year="Januar 2024">
+        <h3>KEA Multimediedesign</h3>
+        <p>Januar 2024 - nu</p>
+        <div class="popup">Starter på Multimediedesign på KEA.</div>
+      </div>
+      <div class="timeline-item" data-year="1. Semester Eksamen (Karakter 12)">
+        <h3>1. Semester Eksamen</h3>
+        <p>Karakter: 12</p>
+        <div class="popup">
+          Opnåede karakteren 12 i første semester eksamen.
+        </div>
+      </div>
+      <div class="timeline-item" data-year="2. Semester Eksamen (Karakter 12)">
+        <h3>2. Semester Eksamen</h3>
+        <p>Karakter: 12</p>
+        <div class="popup">Opnåede karakteren 12 i andet semester eksamen.</div>
+      </div>
+      <div class="timeline-item" data-year="Valgfag Digital Design">
+        <h3>3. Semester valgfag</h3>
+        <p>Digital Design</p>
+        <div class="popup">
+          Valgte Digital Design som valgfag i tredje semester.
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <section id="erfaring">
+    <h2>Erfaringer</h2>
+    <div class="timeline-container">
+      <div class="timeline-item" data-year="2017-2020">
+        <h3>Vordingborg Gymnasie</h3>
+        <p class="skew">
+          Uddannelse på Vordingborg Gymnasie med Samfundsfag og Engelsk A.
+        </p>
+        <p>(STX) Samf-Eng A</p>
+        <p>2017-2020</p>
+      </div>
+      <div class="timeline-item" data-year="Marts 2021 - August 2022">
+        <h3>Træner hos McDonald's</h3>
+        <p class="skew">
+          Træner på McDonald's med ansvar for teams og arbejdsplaner.
+        </p>
+        <p>Marts 2021 - August 2022</p>
+      </div>
+      <div class="timeline-item" data-year="September 2022 - April 2023">
+        <h3>ONLY</h3>
+        <p class="skew">Arbejder som salgsassistent hos ONLY.</p>
+        <p>September 2022 - April 2023</p>
+      </div>
+      <div class="timeline-item" data-year="Juli 2023 - Oktober 2024">
+        <h3>Bones</h3>
+        <p class="skew">Arbejder som tjener hos Bones.</p>
+        <p>Juli 2023 - Oktober 2024</p>
+      </div>
+      <div class="timeline-item" data-year="Januar 2024">
+        <h3>KEA Multimediedesign</h3>
+        <p class="skew">Starter på Multimediedesign på KEA.</p>
+        <p>Januar 2024 - nu</p>
+      </div>
+      <div class="timeline-item" data-year="1. Semester Eksamen (Karakter 12)">
+        <h3>1. Semester Eksamen</h3>
+        <p class="skew">Opnåede karakteren 12 i første semester eksamen.</p>
+        <p>Karakter: 12</p>
+      </div>
+      <div class="timeline-item" data-year="2. Semester Eksamen (Karakter 12)">
+        <h3>2. Semester Eksamen</h3>
+        <p class="skew">Opnåede karakteren 12 i andet semester eksamen.</p>
+        <p>Karakter: 12</p>
+      </div>
+      <div class="timeline-item" data-year="Valgfag Digital Design">
+        <h3>3. Semester valgfag</h3>
+        <p class="skew">Valgte Digital Design som valgfag i tredje semester.</p>
+        <p>Digital Design</p>
+      </div>
+    </div>
+  </section>
 </MainLayout>
+
+<script type="module">
+  // Hent alle tidslinjepunkter
+  const timelineItems = document.querySelectorAll(".timeline-item");
+
+  // Funktion til at tjekke om et element er synligt
+  function isElementInView(el) {
+    const rect = el.getBoundingClientRect();
+    return rect.top >= 0 && rect.bottom <= window.innerHeight;
+  }
+
+  // Funktion til at tilføje animation til synlige elementer
+  function handleScroll() {
+    timelineItems.forEach((item) => {
+      if (isElementInView(item)) {
+        // Tilføj animation, hvis elementet er synligt
+        item.classList.add("animate__fadeIn");
+      }
+    });
+  }
+
+  // Lyt efter scroll-begivenheder
+  window.addEventListener("scroll", handleScroll);
+
+  // Kør initial scroll check, så animationen starter hvis elementet allerede er synligt
+  handleScroll();
+
+  document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(() => {
+      const boldTexts = document.querySelectorAll(".bold-text2");
+
+      boldTexts.forEach((element) => {
+        const words = element.getAttribute("data-words")?.split(", ");
+        if (!words || words.length === 0) return;
+
+        let index = 0;
+
+        setInterval(() => {
+          element.classList.add("fade-out"); // Start fade-out
+
+          setTimeout(() => {
+            index = (index + 1) % words.length;
+            element.textContent = words[index];
+
+            element.classList.remove("fade-out"); // Fjerner fade-out
+            element.classList.add("fade-in"); // Start fade-in
+
+            setTimeout(() => {
+              element.classList.remove("fade-in"); // Fjern fade-in igen
+            }, 500);
+          }, 500); // Skifter ord efter fade-out er færdig
+        }, 4000); //
+      });
+    }, 100);
+  });
+</script>

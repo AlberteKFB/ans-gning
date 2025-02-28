@@ -1,6 +1,48 @@
 ---
+import "../styles/global.css";
 ---
-<div>
-<p>Footer - tilføj footerindhold</p>
+
+<div class="foot">
+  <h2>Tak fordi du læste min ansøgning</h2>
+  <h3>Kontakt mig her!</h3>
+  <div class="kontakt">
+    <a
+      href="https://www.linkedin.com/in/alberte-b%C3%B8tkj%C3%A6r-53383b247/"
+      target="_blank"><img src="linkedin.svg" alt="linkedin" /></a
+    >
+    <a href="mailto:albertebotkjaer@gmail.com"
+      ><img src="mail.svg" alt="mail" /></a
+    >
+  </div>
 </div>
-  
+<style>
+  h2 {
+    text-align: center;
+  }
+  h3 {
+    color: var(--secondary);
+    margin-bottom: 1rem;
+  }
+  .foot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  .kontakt {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  img {
+    display: block;
+    margin: 0 auto;
+    width: 60px;
+    height: auto;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease-in-out;
+  }
+  img:hover {
+    transform: translateY(-10px);
+  }
+</style>

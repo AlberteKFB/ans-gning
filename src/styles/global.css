@@ -1,0 +1,531 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/**Variables**/
+html {
+  --font1: "Nunito", serif;
+  /**Colors**/
+  --primary: #fffcf7; /**Baggrund + font på mørk baggrund**/
+  --secondary: #3f4b7f; /**Fonts + baggrund på cards**/
+  --tertiary: #c1c4e3;
+  --quaternary: #945c65;
+  --quinary: #a9b489;
+  /**Font size**/
+  --fontsize1: 13px;
+  --fontsize2: 16px;
+  --fontsize3: 19px;
+  --fontsize4: 24px;
+  --fontsize5: 32px;
+  --fontsize6: 48px;
+  --fontsize7: 64px;
+  --fontsize8: 72px;
+}
+body {
+  background-color: var(--primary);
+  font-family: "Nunito", serif;
+}
+
+/**Font sizes mobile**/
+h1 {
+  font-size: var(--fontsize5);
+  padding: 2rem;
+  font-family: var(--font1);
+  color: var(--secondary);
+  font-weight: 400;
+}
+.bold-text {
+  font-weight: bold;
+}
+.bold-text2 {
+  font-weight: bold;
+  display: inline-block;
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h2 {
+  color: var(--quaternary);
+  font-size: var(--fontsize4);
+  margin-bottom: 20px;
+}
+h3 {
+  font-size: var(--fontsize3);
+}
+a,
+p,
+li {
+  font-size: var(--fontsize2);
+  max-width: 65ch;
+  line-height: 18px;
+  color: var(--secondary);
+}
+
+a {
+  font-family: var(--font1);
+}
+
+.hero a {
+  text-decoration: none;
+}
+footer p {
+  font-size: var(--fontsize1);
+  line-height: 16px;
+}
+
+/* Default (mobil) */
+#skills {
+  text-align: center;
+  padding: 2rem;
+}
+
+.skills-container {
+  display: flex;
+  flex-direction: column; /* Vertikal linje på mobil */
+  gap: 2rem; /* Mellemrum mellem elementerne */
+}
+
+.skills-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: var(--tertiary);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.skills-item:hover {
+  transform: translateY(-10px);
+}
+
+.skills-item img {
+  width: 60px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.skills-item h3 {
+  font-size: var(--fontsize3);
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: var(--secondary);
+}
+
+.skills-item ul {
+  list-style: disc inside;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.skills-item li {
+  font-size: var(--fontsize2);
+  margin-bottom: 0.5rem;
+  color: var(--secondary);
+}
+#om {
+  padding: 2rem;
+}
+/*main*/
+.hero img {
+  max-width: 100%; /* Sikrer, at billedet ikke bliver for stort */
+  height: auto;
+}
+
+#om p {
+  margin-top: 10px;
+}
+.splash-container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.splash-container img {
+  width: 100%;
+  display: block;
+}
+/* Mobil-first styling */
+#projekter {
+  padding: 2rem;
+  background-color: var(--tertiary);
+  margin-top: -5px;
+}
+
+#projekter h2 {
+  text-align: center;
+}
+
+.projekter-container {
+  display: block;
+}
+
+.projekt {
+  background-color: var(--secondary);
+
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px 0;
+}
+
+.projekt h3 a {
+  text-decoration: none;
+  color: var(--primary);
+  /* font-size: 1.25rem; */
+}
+
+.projekt p {
+  font-size: 1rem;
+  color: var(--primary);
+  margin-top: 10px;
+}
+
+.projekt:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  transition: all 0.3s ease-in-out;
+}
+
+#erfaring h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#erfaring p,
+h3 {
+  text-align: center; /* Centrerer alle p-elementer i #erfaring på mobil */
+}
+
+.timeline-container {
+  max-width: 600px;
+  margin: auto;
+}
+.timeline-item {
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 10px;
+}
+.timeline-item h3 {
+  margin-bottom: 5px;
+  color: var(--secondary);
+}
+.timeline-item p {
+  margin: 5px 0;
+}
+.description {
+  margin-top: 10px;
+  font-style: italic;
+}
+
+.hero-image img:last-child {
+  /* Blob */
+  display: none; /* Skjules på mobil */
+}
+
+@media (min-width: 800px) {
+  body {
+    text-align: left;
+  }
+  h1 {
+    font-size: var(--fontsize6);
+  }
+  h2 {
+    font-size: var(--fontsize5);
+  }
+  h3 {
+    font-size: var(--fontsize4);
+  }
+
+  a,
+  p,
+  li {
+    font-size: var(--fontsize3);
+    line-height: 20px;
+  }
+  p {
+    text-align: left;
+  }
+  footer p {
+    font-size: var(--fontsize2);
+    line-height: 18px;
+  }
+
+  /**Margin & padding desktop. OBS header og footer styles i egen komponent**/
+
+  main {
+    max-width: 1400px;
+  }
+  h2,
+  h3,
+  p {
+    margin-right: 2rem;
+    margin-left: 2rem;
+  }
+  /* .hero {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+  }
+
+  .hero div {
+    flex: 1;
+  } */
+  .hero {
+    position: relative;
+
+    padding-top: 4rem; /* Skubber indholdet ned, så det ikke går ind i headeren */
+  }
+  .hero-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 500px; /* Justér efter behov */
+    margin: 0 auto;
+    padding-top: 5rem;
+  }
+
+  .hero-image img {
+    width: 100%; /* Fylder containerens bredde */
+    height: auto;
+  }
+
+  .hero-image img:first-child {
+    /* Portræt */
+    position: relative;
+    z-index: 2; /* Ligger over blob */
+    width: 80%; /* Gør portrættet større */
+  }
+
+  .hero-image img:last-child {
+    /* Blob */
+    display: block; /* Vises kun på desktop */
+    position: absolute;
+    z-index: 1; /* Ligger bag portrættet */
+    width: 100%; /* Gør blob større */
+
+    /* Roterende animation */
+    animation: rotate-center 20s linear infinite;
+  }
+  @keyframes rotate-center {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Opretter 3 kolonner med lige bredde */
+  }
+
+  .hero-content {
+    grid-column: 1 / 3;
+    text-align: left;
+  }
+  .hero-image {
+    grid-column: 3/ 4;
+    width: 100%;
+    max-width: 500px;
+  }
+  #om {
+    padding: 0;
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centrerer indholdet vertikalt */
+  }
+  #om h2 {
+    text-align: center;
+  }
+  #om p {
+    max-width: 60ch;
+  }
+  /* .skills-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 2rem;
+  }
+
+  .skills-item:nth-child(4) {
+    grid-column: 1 / 2;
+  }
+
+  .skills-item:nth-child(5) {
+    grid-column: 2 / 3;
+  } */
+  .skills-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 kolonner */
+    grid-gap: 2rem; /* Mellemrum mellem elementer */
+  }
+
+  /* Justering af bredde for skills-item */
+  .skills-item {
+    margin: 0; /* Fjern margin-bottom for at undgå overlap */
+  }
+
+  #skills h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  .projekter-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .projekt {
+    /* width: calc(50% - 20px); */
+    margin: 10px;
+  }
+
+  .projekt {
+    width: calc(25% - 20px);
+  }
+
+  /* #erfaring {
+    margin-top: 50px;
+  } */
+
+  #erfaring h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  #erfaring p {
+    text-align: left;
+    margin-bottom: 30px;
+  }
+
+  /* Grundlæggende stil for containeren */
+  /* Grundlæggende stil for containeren */
+  #erfaring {
+    position: relative;
+  }
+
+  /* Tidslinjens container */
+  .timeline-container {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* Skifter punkterne til lodret */
+    align-items: center;
+    padding: 20px 0;
+  }
+
+  /* Den vertikale linje i tidslinjen */
+  .timeline-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background-color: var(--secondary);
+    transform: translateX(-50%);
+  }
+
+  /* Styling af hvert tidslinjepunkt */
+  .timeline-item {
+    position: relative;
+    opacity: 0; /* Start med at gøre punkterne usynlige */
+    transition: opacity 1s ease-in-out;
+    margin-bottom: 40px;
+    width: 90%; /* Gør punkterne lidt smallere */
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+  }
+
+  /* Justering af venstre og højre punkt */
+  .timeline-item:nth-child(even) {
+    align-items: flex-end; /* Skifter positionen for lige punkter */
+    margin-left: 0;
+  }
+
+  .timeline-item:nth-child(odd) {
+    align-items: flex-start; /* Skifter positionen for ulige punkter */
+  }
+
+  /* Stiplet linje fra den vertikale linje til H3 */
+  .timeline-item::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 50%; /* Starter på den vertikale linje */
+    width: 50%; /* Linjen går 50% af længden for venstre punkt */
+    height: 2px;
+    background-color: transparent;
+    border-top: 2px dashed var(--tertiary); /* Stiplet linje */
+    transform: translateX(-70%); /* Placering fra midten */
+  }
+
+  /* Juster den stiplede linje til venstre og højre afhængigt af punktets placering */
+  .timeline-item:nth-child(even)::after {
+    left: 50%; /* Placér linjen på midten */
+    width: 50%; /* Gør linjen længere mod højre */
+    transform: translateX(0); /* Ikke juster linjen for højre side */
+  }
+
+  .timeline-item:nth-child(odd)::after {
+    left: 50%; /* Placér linjen på midten */
+    width: 50%; /* Gør linjen længere mod venstre */
+    transform: translateX(-100%); /* Juster linjen mod venstre */
+  }
+
+  /* Styling af H3 (overskriften for hvert punkt) */
+  .timeline-item h3 {
+    margin: 0;
+    /* font-size: 1.3rem; */
+    /* text-align: center;
+    position: relative; */
+    z-index: 2;
+    margin-top: 30px; /* Giver lidt plads til teksten */
+  }
+
+  /* Styling af P (beskrivelse under H3) */
+  .timeline-item p {
+    margin: 10px 0;
+    /* font-size: 1rem; */
+    color: #555;
+    /* text-align: center; */
+    max-width: 40%; /* Sætter max-width, så teksten ikke fylder hele bredden */
+  }
+
+  .timeline-item.animate__fadeIn {
+    opacity: 1;
+  }
+
+  .skew {
+    font-style: italic; /* Gør teksten kursiv */
+    color: var(--tertiary); /* Skift farven, hvis du ønsker det */
+    margin-top: 5px; /* Giver lidt afstand */
+    max-width: 40%; /* Gør boksen smallere */
+    text-align: left; /* Justerer teksten til venstre */
+    word-wrap: break-word; /* Sørger for, at teksten brydes korrekt */
+  }
+}
+#skills,
+#om,
+#projekter,
+#erfaring {
+  padding: 3rem; /* Tilpasset padding for disse sektioner */
+}
