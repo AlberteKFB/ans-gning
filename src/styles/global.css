@@ -89,6 +89,7 @@ footer p {
 #skills {
   text-align: center;
   padding: 2rem;
+  padding-bottom: 10rem;
 }
 
 .skills-container {
@@ -264,6 +265,7 @@ footer p {
   align-items: center;
   text-align: center;
   position: relative;
+  padding-top: 2rem;
 }
 
 .fun ul {
@@ -284,6 +286,13 @@ footer p {
 }
 .funfact {
   display: none; /* Billedet er skjult på mobil */
+}
+
+#om,
+#skills,
+#erfaring,
+.fun {
+  padding-top: 7rem;
 }
 @media (min-width: 800px) {
   body {
@@ -395,7 +404,7 @@ footer p {
   }
   #om {
     padding: 0;
-    margin-top: 4rem;
+    margin-top: 7rem;
     display: flex;
     justify-content: center;
     align-items: center; /* Centrerer indholdet vertikalt */
@@ -577,7 +586,7 @@ footer p {
     padding: 1rem;
     border-radius: 10px;
     position: absolute;
-    top: 50%;
+    top: 56%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2; /* Sørg for, at listen er over billedet */
