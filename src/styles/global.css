@@ -1,3 +1,4 @@
+@import "animate.css";
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +13,7 @@ html {
   --secondary: #3f4b7f; /**Fonts + baggrund på cards**/
   --tertiary: #c1c4e3;
   --quaternary: #945c65;
-  --quinary: #a9b489;
+
   /**Font size**/
   --fontsize1: 13px;
   --fontsize2: 16px;
@@ -58,7 +59,7 @@ h1 {
 h2 {
   color: var(--quaternary);
   font-size: var(--fontsize4);
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 h3 {
   font-size: var(--fontsize3);
@@ -104,13 +105,13 @@ footer p {
   background-color: var(--tertiary);
   padding: 1.5rem;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
+  /* 
+  transition: transform 0.3s ease-in-out; */
 }
 
-.skills-item:hover {
+/* .skills-item:hover {
   transform: translateY(-10px);
-}
+} */
 
 .skills-item img {
   width: 60px;
@@ -154,11 +155,14 @@ footer p {
   margin: 0;
   padding: 0;
 }
-
+.bsplash {
+  margin-top: -10px;
+}
 .splash-container img {
   width: 100%;
   display: block;
 }
+
 /* Mobil-first styling */
 #projekter {
   padding: 2rem;
@@ -176,10 +180,10 @@ footer p {
 
 .projekt {
   background-color: var(--secondary);
-
   border-radius: 10px;
   padding: 15px;
   margin: 10px 0;
+  transition: all 0.3s ease-in-out;
 }
 
 .projekt h3 a {
@@ -187,7 +191,27 @@ footer p {
   color: var(--primary);
   /* font-size: 1.25rem; */
 }
+.projekt h3 {
+  transition: transform 0.3s ease, color 0.3s ease; /* Tilføj transition for både skalerings- og farveændring */
+}
 
+/* Når du hover over linket i h3 */
+.projekt h3 a {
+  text-decoration: none;
+  color: var(--primary);
+  transition: color 0.3s ease;
+}
+
+/* Når du hover på hele projektet */
+.projekt h3:hover {
+  transform: scale(1.2); /* Skalerer h3 til 120% */
+}
+
+.projekt h3 a:hover {
+  color: var(
+    --quaternary
+  ); /* Skift farve på linket til en ny farve, f.eks. var(--accent) */
+}
 .projekt p {
   font-size: 1rem;
   color: var(--primary);
@@ -195,9 +219,7 @@ footer p {
 }
 
 .projekt:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transform: translateY(-5px);
-  transition: all 0.3s ease-in-out;
+  transform: translateY(-10px);
 }
 
 #erfaring h2 {
@@ -206,7 +228,7 @@ footer p {
 }
 
 #erfaring p,
-h3 {
+#erfaring h3 {
   text-align: center; /* Centrerer alle p-elementer i #erfaring på mobil */
 }
 
@@ -236,6 +258,33 @@ h3 {
   display: none; /* Skjules på mobil */
 }
 
+.fun {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.fun ul {
+  width: 100%; /* Fylder hele bredden */
+  padding: 2rem;
+  border-radius: 10px;
+  word-wrap: break-word; /* Sikrer, at lange ord ikke strækker sig udenfor */
+  white-space: normal; /* Tillader linjeskift */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Venstrestillet tekst */
+  text-align: left; /* Ensretter teksten til venstre */
+  list-style-type: disc; /* Sikrer at listen er i punktform */
+}
+
+.fun h2 {
+  margin-bottom: 1rem;
+}
+.funfact {
+  display: none; /* Billedet er skjult på mobil */
+}
 @media (min-width: 800px) {
   body {
     text-align: left;
@@ -357,19 +406,7 @@ h3 {
   #om p {
     max-width: 60ch;
   }
-  /* .skills-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 2rem;
-  }
 
-  .skills-item:nth-child(4) {
-    grid-column: 1 / 2;
-  }
-
-  .skills-item:nth-child(5) {
-    grid-column: 2 / 3;
-  } */
   .skills-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 kolonner */
@@ -380,30 +417,42 @@ h3 {
   .skills-item {
     margin: 0; /* Fjern margin-bottom for at undgå overlap */
   }
+  .skills-item {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+  }
+
+  .skills-item.show {
+    opacity: 1;
+    transform: translateX(0);
+  }
 
   #skills h2 {
     margin-bottom: 1.5rem;
   }
-
   .projekter-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* To kolonner af samme størrelse */
+    gap: 20px; /* Mellemrum mellem elementerne */
+  }
+  /* .projekter-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
 
   .projekt {
-    /* width: calc(50% - 20px); */
     margin: 10px;
   }
 
   .projekt {
     width: calc(25% - 20px);
-  }
-
-  /* #erfaring {
-    margin-top: 50px;
   } */
-
+  #projekter {
+    padding-left: 7rem;
+    padding-right: 7rem;
+  }
   #erfaring h2 {
     text-align: center;
     margin-bottom: 30px;
@@ -411,7 +460,6 @@ h3 {
 
   #erfaring p {
     text-align: left;
-    margin-bottom: 30px;
   }
 
   /* Grundlæggende stil for containeren */
@@ -494,9 +542,7 @@ h3 {
   /* Styling af H3 (overskriften for hvert punkt) */
   .timeline-item h3 {
     margin: 0;
-    /* font-size: 1.3rem; */
-    /* text-align: center;
-    position: relative; */
+
     z-index: 2;
     margin-top: 30px; /* Giver lidt plads til teksten */
   }
@@ -504,10 +550,10 @@ h3 {
   /* Styling af P (beskrivelse under H3) */
   .timeline-item p {
     margin: 10px 0;
-    /* font-size: 1rem; */
+
     color: #555;
-    /* text-align: center; */
-    max-width: 40%; /* Sætter max-width, så teksten ikke fylder hele bredden */
+
+    max-width: 40%;
   }
 
   .timeline-item.animate__fadeIn {
@@ -522,10 +568,39 @@ h3 {
     text-align: left; /* Justerer teksten til venstre */
     word-wrap: break-word; /* Sørger for, at teksten brydes korrekt */
   }
-}
-#skills,
-#om,
-#projekter,
-#erfaring {
-  padding: 3rem; /* Tilpasset padding for disse sektioner */
+
+  .fun ul {
+    width: 80%; /* Sørger for, at listen ikke bliver bredere end billedet */
+    max-width: 350px; /* Sætter en fast maksimal bredde */
+    word-wrap: break-word; /* Sikrer, at lange ord ikke strækker sig udenfor */
+    white-space: normal; /* Tillader linjeskift */
+    padding: 1rem;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Sørg for, at listen er over billedet */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .fun ul li {
+    color: var(--primary);
+
+    text-align: left;
+  }
+
+  .funfact {
+    position: relative;
+    /* width: 100%; */
+    display: flex;
+    justify-content: center;
+  }
+
+  .funfact img {
+    max-width: 100%;
+    height: auto;
+  }
 }

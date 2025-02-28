@@ -2,9 +2,12 @@
 import "../styles/global.css";
 ---
 
+<div class="splash-container">
+  <img src="splash3.svg" alt="splash" />
+</div>
 <div class="foot">
-  <h2>Tak fordi du læste min ansøgning</h2>
-  <h3>Kontakt mig her!</h3>
+  <h2>Tak fordi du læste min ansøgning!</h2>
+  <h3>Vil med glæde hører fra jer her:</h3>
   <div class="kontakt">
     <a
       href="https://www.linkedin.com/in/alberte-b%C3%B8tkj%C3%A6r-53383b247/"
@@ -15,19 +18,22 @@ import "../styles/global.css";
     >
   </div>
 </div>
+
 <style>
   h2 {
     text-align: center;
+    color: var(--primary);
   }
   h3 {
-    color: var(--secondary);
+    color: var(--primary);
     margin-bottom: 1rem;
   }
   .foot {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    background-color: var(--secondary);
   }
   .kontakt {
     display: flex;
@@ -39,10 +45,21 @@ import "../styles/global.css";
     margin: 0 auto;
     width: 60px;
     height: auto;
-    margin-bottom: 1rem;
+    padding-bottom: 1rem;
     transition: transform 0.3s ease-in-out;
   }
-  img:hover {
+  .kontakt img:hover {
     transform: translateY(-10px);
+  }
+  .splash-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .splash-container img {
+    width: 100%;
+    display: block;
+    margin-bottom: -30px;
   }
 </style>

@@ -35,7 +35,7 @@ import "../styles/global.css";
     align-items: center;
     text-align: left;
     background-color: var(--primary);
-    border-bottom: 3px solid var(--secondary);
+    /* border-bottom: 3px solid var(--secondary); */
   }
 
   .logo {
@@ -60,7 +60,7 @@ import "../styles/global.css";
     transition: color 0.3s;
   }
   .menu a:hover {
-    color: var(--tertiary);
+    color: var(---quaternary);
   }
   /**Burger menu mobile**/
   .burger {
@@ -123,7 +123,7 @@ import "../styles/global.css";
       padding: 0;
       padding-bottom: 0.4rem;
       gap: 30px;
-      overflow-x: auto;
+      /* overflow-x: auto; */
     }
     .logo img {
       width: 70px;
@@ -132,6 +132,12 @@ import "../styles/global.css";
 
     .burger {
       display: none;
+    }
+    .menu a {
+      transition: transform 0.3s ease;
+    }
+    .menu a:hover {
+      transform: scale(1.2);
     }
   }
 </style>
